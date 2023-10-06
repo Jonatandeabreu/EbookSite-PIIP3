@@ -5,10 +5,10 @@ const getTodos = (req, res) => {
 }
 
 const getByID = (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     id = parseInt(id);
 
-    const libroEncontrado = librosFake.find( ing => ing._id === id );
+    const libroEncontrado = librosFake.find(ing => ing._id === id);
 
     if (libroEncontrado) {
         res.json(libroEncontrado);
@@ -23,10 +23,8 @@ const getByID = (req, res) => {
 const agregar = (req, res) => {
     const { nombre, autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body;
 
-    //console.log(nombre, foto, color);
-
     const data = {
-        _id: librosFake.length+1,
+        _id: librosFake.length + 1,
         ...req.body // Operador spread
     }
     librosFake.push(data);
@@ -34,11 +32,10 @@ const agregar = (req, res) => {
 }
 
 const editar = (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     id = parseInt(id);
     const { nombre, autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body;
 
-    //console.log(nombre, foto, color);
     const libroIdx = librosFake.findIndex(ing => ing._id === id);
     let librosActualizado = {};
     if (libroIdx > -1) {
@@ -48,11 +45,11 @@ const editar = (req, res) => {
         };
         librosFake[libroIdx] = librosActualizado;
     }
-    res.json( librosActualizado );
+    res.json(librosActualizado);
 }
 
 const borrar = (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     id = parseInt(id);
 
     const libroIdx = librosFake.findIndex(ing => ing._id === id);
@@ -62,7 +59,7 @@ const borrar = (req, res) => {
         librosFake.splice(libroIdx, 1);
     }
 
-    res.json( libroBorrado );
+    res.json(libroBorrado);
 }
 
 module.exports = {

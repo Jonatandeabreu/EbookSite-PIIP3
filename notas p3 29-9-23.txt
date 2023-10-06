@@ -1,6 +1,0 @@
-API REST
-// https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
-************************************************************************************
-Permite levantar lo que este en un archivo .env (variable de entorno)
-npm i dotenv
-************************************************************************************
