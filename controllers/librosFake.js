@@ -1,9 +1,12 @@
 const librosFake = require('../data/libros');
+const userfake = require('../data/user');
 
+//obtener todos
 const getTodos = (req, res) => {
     res.json(librosFake);
 }
 
+//obtener por ID
 const getByID = (req, res) => {
     let { id } = req.params;
     id = parseInt(id);
@@ -20,6 +23,7 @@ const getByID = (req, res) => {
     }
 }
 
+//Agregar
 const agregar = (req, res) => {
     const { nombre, autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body;
 
@@ -31,6 +35,7 @@ const agregar = (req, res) => {
     res.status(201).json(data);
 }
 
+//Editar
 const editar = (req, res) => {
     let { id } = req.params;
     id = parseInt(id);
@@ -48,6 +53,7 @@ const editar = (req, res) => {
     res.json(librosActualizado);
 }
 
+//Borrar
 const borrar = (req, res) => {
     let { id } = req.params;
     id = parseInt(id);
@@ -62,10 +68,27 @@ const borrar = (req, res) => {
     res.json(libroBorrado);
 }
 
+//login
+const login = (req, res) => {
+    const { usuario, pass } = req.body;
+    const uservalido = userfake.find(u => u.usuario === usuario && u.contraseña === pass);
+    if (uservalido) {
+        res.json({
+            msg: 'inicio exitoso'
+        })
+    } else {
+        res.json({
+            msg: 'error'
+        })
+    }
+}
+
+//Exportar funciones
 module.exports = {
     getTodos,
     getByID,
     agregar,
     editar,
-    borrar
+    borrar,
+    login
 }
