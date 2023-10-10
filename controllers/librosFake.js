@@ -70,11 +70,14 @@ const borrar = (req, res) => {
 
 //login
 const login = (req, res) => {
-    const { usuario, pass } = req.body;
-    const uservalido = userfake.find(u => u.usuario === usuario && u.contraseña === pass);
+    const { nombre, pass } = req.body;
+    const token = "el token"
+    const uservalido = userfake.usuarios.find(u => u.nombre === nombre && u.pass === pass);
     if (uservalido) {
         res.json({
-            msg: 'inicio exitoso'
+            msg: 'inicio exitoso',
+            nombre,
+            token
         })
     } else {
         res.json({

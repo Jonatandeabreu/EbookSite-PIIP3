@@ -1,5 +1,29 @@
-module.exports = [
-  { usuario: "usuario1", contraseña: "contraseña1" },
-  { usuario: "usuario2", contraseña: "contraseña2" },
-  { usuario: "usuario3", contraseña: "contraseña3" }
-]
+module.exports={
+  "usuarios": [
+    {
+      "nombre": "Usuario1",
+      "pass": "contraseña1",
+      "rol": "ADMIN"
+    },
+    {
+      "nombre": "Usuario2",
+      "pass": "contraseña2",
+      "rol": "std"
+    },
+    {
+      "nombre": "Usuario3",
+      "pass": "contraseña3",
+      "rol": "std"
+    },
+    {
+      "nombre": "Usuario4",
+      "pass": "contraseña4",
+      "rol": "std"
+    },
+    {
+      "nombre": "Usuario5",
+      "pass": "contraseña5",
+      "rol": "std"
+    }
+  ]
+}

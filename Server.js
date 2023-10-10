@@ -15,6 +15,7 @@ class Server {
 
     cargarRutas() {
         this.app.use("/api/libros", require('./routes/libros'));
+        this.app.use("/api/auth", require('./routes/auth'));
     }
 
     listen() {
