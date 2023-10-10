@@ -1,6 +1,6 @@
 const librosFake = require('../data/libros');
 const userfake = require('../data/user');
-
+const jwt = require('jsonwebtoken')
 //obtener todos
 const getTodos = (req, res) => {
     res.json(librosFake);
@@ -69,9 +69,9 @@ const borrar = (req, res) => {
 }
 
 //login
-const login = (req, res) => {
+const login = async (req, res) => {
     const { nombre, pass } = req.body;
-    const token = "el token"
+    const token = await generarJWT(nombre)
     const uservalido = userfake.usuarios.find(u => u.nombre === nombre && u.pass === pass);
     if (uservalido) {
         res.json({
@@ -85,6 +85,18 @@ const login = (req, res) => {
         })
     }
 }
+
+//generar token 
+const generarJWT = (nombreuser) =>{
+ return new Promise((resolve,reject) => {
+   const payload = {nombreuser}
+   jwt.sign(payload,process.env.clave,{expiresIn:"4h"},(err,token) =>{
+    if(err) reject(err)
+    else resolve(token)
+   })
+ }
+ )
+} 
 
 //Exportar funciones
 module.exports = {
