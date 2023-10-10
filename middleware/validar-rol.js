@@ -1,8 +1,14 @@
 const userfake = require("../data/user");
+const jwt = require('jsonwebtoken')
 
 const validarJWT = (req, res, next) => {
-  const nom = req.body.nombre;
-  const user = userfake.usuarios.find(u => u.nombre === nom);
+  const token = req.header('x-token');
+ 
+  try {
+    //validar que exista el token
+  const {nombreuser} = jwt.verify(token,process.env.clave)
+  
+  const user = userfake.usuarios.find(u => u.nombre === nombreuser);
   if (user) {
     req.usuario = user;
     next();
@@ -11,6 +17,12 @@ const validarJWT = (req, res, next) => {
       msg: `no existe usario ${req.body.nombre}`,
     });
   }
+  } catch (error) {
+    res.status(400).json({
+        msg:"error"
+    })
+  }
+  
 };
 
 const esAdmin = (req, res, next) => {
