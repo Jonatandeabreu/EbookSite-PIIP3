@@ -1,30 +1,32 @@
 const userfake = require("../data/user");
 const jwt = require('jsonwebtoken')
 
+//valida token
 const validarJWT = (req, res, next) => {
   const token = req.header('x-token');
- 
+
   try {
     //validar que exista el token
-  const {nombreuser} = jwt.verify(token,process.env.clave)
-  
-  const user = userfake.usuarios.find(u => u.nombre === nombreuser);
-  if (user) {
-    req.usuario = user;
-    next();
-  } else {
-    res.status(401).json({
-      msg: `no existe usario ${req.body.nombre}`,
-    });
-  }
+    const { nombreuser } = jwt.verify(token, process.env.clave)
+
+    const user = userfake.usuarios.find(u => u.nombre === nombreuser);
+    if (user) {
+      req.usuario = user;
+      next();
+    } else {
+      res.status(401).json({
+        msg: `no existe usario ${req.body.nombre}`,
+      });
+    }
   } catch (error) {
     res.status(400).json({
-        msg:"error"
+      msg: "error"
     })
   }
-  
+
 };
 
+//valida si es admin
 const esAdmin = (req, res, next) => {
   if (!req.usuario) {
     res.status(500).json({
@@ -37,15 +39,15 @@ const esAdmin = (req, res, next) => {
         msg: `${nombre} no es ADMIN`,
       });
     } else {
-      res.json({
-        msg:`${nombre} es ${rol}`
-      })
-      //next();
+
+      next();
+
     }
   }
 };
 
+//exportan funciones
 module.exports = {
-    validarJWT,
-    esAdmin
-  };
+  validarJWT,
+  esAdmin
+};

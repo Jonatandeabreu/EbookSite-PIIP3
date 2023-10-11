@@ -1,6 +1,5 @@
 const librosFake = require('../data/libros');
-const userfake = require('../data/user');
-const jwt = require('jsonwebtoken')
+
 //obtener todos
 const getTodos = (req, res) => {
     res.json(librosFake);
@@ -32,7 +31,10 @@ const agregar = (req, res) => {
         ...req.body // Operador spread
     }
     librosFake.push(data);
-    res.status(201).json(data);
+    res.status(201).json({
+        msg:'se agrego el libro',
+        data
+    });
 }
 
 //Editar
@@ -50,7 +52,9 @@ const editar = (req, res) => {
         };
         librosFake[libroIdx] = librosActualizado;
     }
-    res.json(librosActualizado);
+    res.json({
+        msg:'se edito el libro',
+        librosActualizado});
 }
 
 //Borrar
@@ -65,38 +69,10 @@ const borrar = (req, res) => {
         librosFake.splice(libroIdx, 1);
     }
 
-    res.json(libroBorrado);
+    res.json({
+        msg:'se borro el libro',
+        libroBorrado});
 }
-
-//login
-const login = async (req, res) => {
-    const { nombre, pass } = req.body;
-    const token = await generarJWT(nombre)
-    const uservalido = userfake.usuarios.find(u => u.nombre === nombre && u.pass === pass);
-    if (uservalido) {
-        res.json({
-            msg: 'inicio exitoso',
-            nombre,
-            token
-        })
-    } else {
-        res.json({
-            msg: 'error'
-        })
-    }
-}
-
-//generar token 
-const generarJWT = (nombreuser) =>{
- return new Promise((resolve,reject) => {
-   const payload = {nombreuser}
-   jwt.sign(payload,process.env.clave,{expiresIn:"4h"},(err,token) =>{
-    if(err) reject(err)
-    else resolve(token)
-   })
- }
- )
-} 
 
 //Exportar funciones
 module.exports = {
@@ -104,6 +80,5 @@ module.exports = {
     getByID,
     agregar,
     editar,
-    borrar,
-    login
+    borrar
 }
