@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "652e7a0fdf56dd906795a678"
+  },
+  "nombre": "usuario1",
+  "pass": "contraseña1",
+  "rol": "ADMIN",
+  "mail": "user@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "652e7a0fdf56dd906795a679"
+  },
+  "nombre": "usuario2",
+  "pass": "contraseña2",
+  "rol": "std",
+  "mail": "user@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "652e7a0fdf56dd906795a67a"
+  },
+  "nombre": "usuario3",
+  "pass": "contraseña3",
+  "rol": "std",
+  "mail": "user@gmail.com"
+}]
