@@ -66,7 +66,7 @@ const validaterevbyuser = [
 // Middleware de validación para el formulario de agregar libro
 const validateaddbook = [
   body('nombre').notEmpty().withMessage('El campo de nombre no puede estar vacío'),
-  body('autor').notEmpty().withMessage('El campo de autor no puede estar vacío'),
+  body('id_autor').notEmpty().withMessage('El campo de autor no puede estar vacío'),
   body('editorial').notEmpty().withMessage('El campo de editorial no puede estar vacío'),
   body('descripcion').notEmpty().withMessage('El campo de descripcion no puede estar vacío'),
   body('numero_pag').notEmpty().withMessage('El campo de numero_pag no puede estar vacío'),

@@ -3,7 +3,9 @@
     "$oid": "652e7de9df56dd906795a688"
   },
   "nombre": "Harry Potter y la Piedra Filosofal",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "Cuando empiezan a llegar cartas misteriosas a su puerta, Harry Potter nunca ha oído hablar del Colegio Hogwarts de Magia y Hechicería.",
   "numero_pag": 248,
@@ -15,7 +17,9 @@
     "$oid": "652e7de9df56dd906795a689"
   },
   "nombre": "Harry Potter y la cámara secreta",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "Durante las vacaciones de verano después de su primer año en el Colegio Hogwarts de Magia y Hechicería, Harry Potter ha estado recibiendo siniestras advertencias de un elfo doméstico llamado Dobby.",
   "numero_pag": 286,
@@ -27,7 +31,9 @@
     "$oid": "652e7de9df56dd906795a68a"
   },
   "nombre": "Harry Potter y el prisionero de Azkaban",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "Para Harry Potter, es el comienzo de otro año nada común en Hogwarts cuando el Autobús Noctámbulo se estrella en la oscuridad y se detiene abruptamente frente a él.",
   "numero_pag": 359,
@@ -39,7 +45,9 @@
     "$oid": "652e7de9df56dd906795a68b"
   },
   "nombre": "Harry Potter y el cáliz de fuego",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "El cuarto libro de la franquicia de Harry Potter ve a Harry regresar para su cuarto año en el Colegio Hogwarts de Magia y Hechicería, junto con sus amigos, Ron y Hermione.",
   "numero_pag": 635,
@@ -51,7 +59,9 @@
     "$oid": "652e7f5edf56dd906795a68c"
   },
   "nombre": "Harry Potter y la orden del Fénix",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "Las tediosas vacaciones de verano en la casa de los tíos de Harry todavía no han acabado cuando Harry presiente que algo extraño está sucediento en academia Hogwarts. Cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores vuelven realidad.",
   "numero_pag": 893,
@@ -63,7 +73,9 @@
     "$oid": "652e7f5edf56dd906795a68d"
   },
   "nombre": "Harry Potter y el misterio del príncipe",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "Con dieciséis años cumplidos, Harry inicia el sexto curso en Hogwarts en medio de terribles acontecimientos que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los exámenes y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco.",
   "numero_pag": 602,
@@ -75,7 +87,9 @@
     "$oid": "652e7f5edf56dd906795a68e"
   },
   "nombre": "Harry Potter y las reliquias de la muerte",
-  "autor": "J. K. Rowling",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b3"
+  },
   "editorial": "Salamandra",
   "descripcion": "Harry Potter abandona Privet Drive por última vez. Pero cuando se sube al sidecar de la motocicleta de Hagrid y surcan los cielos, sabe que Lord Voldemort y los Mortífagos no se quedarán atrás.",
   "numero_pag": 638,
@@ -87,7 +101,9 @@
     "$oid": "652e7f5edf56dd906795a68f"
   },
   "nombre": "A Game of Thrones",
-  "autor": "George R. R. Martin",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b4"
+  },
   "editorial": "Bantam Books",
   "descripcion": "Aquí está el primer volumen del magnífico ciclo de novelas de George R. R. Martin que incluye Choque de reyes y Tormenta de espadas. En conjunto, esta serie constituye una auténtica obra maestra de la fantasía moderna, que reúne lo mejor que el género tiene para ofrecer.",
   "numero_pag": 704,
@@ -99,7 +115,9 @@
     "$oid": "652e8682df56dd906795a694"
   },
   "nombre": "El resplandor",
-  "autor": "Stephen King",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b5"
+  },
   "editorial": "Debolsillo",
   "descripcion": "Una obra maestra del terror que narra la historia de un hombre y su familia que se mudan a un aislado hotel durante el invierno, donde su cordura comienza a desmoronarse.",
   "numero_pag": 447,
@@ -111,7 +129,9 @@
     "$oid": "652e8682df56dd906795a695"
   },
   "nombre": "It",
-  "autor": "Stephen King",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b5"
+  },
   "editorial": "Debolsillo",
   "descripcion": "Esta novela sigue a un grupo de amigos que se enfrenta a una entidad maligna que toma la forma de un payaso y que aterroriza a la ciudad de Derry durante décadas.",
   "numero_pag": 1504,
@@ -123,7 +143,9 @@
     "$oid": "652e8682df56dd906795a696"
   },
   "nombre": "El Exorcista",
-  "autor": "William Peter Blatty",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b6"
+  },
   "editorial": "Debolsillo",
   "descripcion": "Una historia clásica de posesión demoníaca y el intento de un sacerdote de salvar a una joven poseída por una fuerza maligna.",
   "numero_pag": 416,
@@ -135,7 +157,9 @@
     "$oid": "652e8682df56dd906795a697"
   },
   "nombre": "Psicosis",
-  "autor": "Robert Bloch",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b7"
+  },
   "editorial": "La Factoria De Ideas",
   "descripcion": "La novela en la que se basó la famosa película de Alfred Hitchcock. Cuenta la historia de Norman Bates y su aterrador motel.",
   "numero_pag": 176,
@@ -147,7 +171,9 @@
     "$oid": "652e8682df56dd906795a698"
   },
   "nombre": "El Silencio de los Corderos",
-  "autor": "Thomas Harris",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b8"
+  },
   "editorial": "Editorial Martin's Press",
   "descripcion": "Esta novela introdujo al mundo al icónico Hannibal Lecter. Sigue a una agente del FBI mientras consulta a Lecter en la búsqueda de un asesino en serie.",
   "numero_pag": 352,
@@ -159,7 +185,9 @@
     "$oid": "652e8ac4df56dd906795a69b"
   },
   "nombre": "A Clash of Kings",
-  "autor": "George R. R. Martin",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b4"
+  },
   "editorial": "Bantam Books",
   "descripcion": "El segundo libro se centra en la guerra civil que estalla en los Siete Reinos después de la muerte del rey Robert Baratheon. Varios personajes continúan luchando por el poder, y la trama se complica con el aumento de las amenazas desde el norte y el creciente peligro de los Caminantes Blancos.",
   "numero_pag": 708,
@@ -171,7 +199,9 @@
     "$oid": "652e8ac4df56dd906795a69c"
   },
   "nombre": "A Storm of Swords",
-  "autor": "George R. R. Martin",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b4"
+  },
   "editorial": "Bantam Books",
   "descripcion": "Este libro es uno de los más intensos de la serie y presenta numerosos giros inesperados y conflictos. Las luchas por el poder continúan, y se revelan secretos importantes. La guerra se extiende a lo largo y ancho de Westeros, y los personajes enfrentan decisiones difíciles.",
   "numero_pag": 973,
@@ -183,7 +213,9 @@
     "$oid": "652e8ac4df56dd906795a69d"
   },
   "nombre": "A Feast for Crows",
-  "autor": "George R. R. Martin",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b4"
+  },
   "editorial": "Bantam Books",
   "descripcion": "En este libro, la narrativa se centra principalmente en los sucesos en el sur de Westeros y en los personajes que quedan después de los eventos en \"Tormenta de Espadas\". Mientras la lucha por el Trono de Hierro sigue, nuevos personajes y tramas se introducen.",
   "numero_pag": 704,
@@ -195,7 +227,9 @@
     "$oid": "652e8ac4df56dd906795a69e"
   },
   "nombre": "A Dance with Dragons",
-  "autor": "George R. R. Martin",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b4"
+  },
   "editorial": "Bantam Books",
   "descripcion": "Este libro se ejecuta en paralelo a algunos de los eventos de \"Festín de Cuervos\" y sigue a varios personajes mientras enfrentan desafíos y peligros en diferentes partes de Westeros y más allá. La trama se complica aún más con la introducción de elementos mágicos y la lucha contra los Otros (Caminantes Blancos) en el norte.",
   "numero_pag": 1040,
@@ -207,7 +241,9 @@
     "$oid": "652e8d1adf56dd906795a69f"
   },
   "nombre": "The Fellowship of the Ring",
-  "autor": "J. R. R. Tolkien",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b9"
+  },
   "editorial": "George Allen & Unwin",
   "descripcion": "En este primer libro, se presenta el mundo de la Tierra Media y un grupo de personajes que emprende un viaje para destruir el Anillo Único en el Monte del Destino y evitar que caiga en manos del Señor Oscuro, Sauron.",
   "numero_pag": 423,
@@ -219,7 +255,9 @@
     "$oid": "652e8d1adf56dd906795a6a0"
   },
   "nombre": "The Two Towers",
-  "autor": "J. R. R. Tolkien",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b9"
+  },
   "editorial": "George Allen & Unwin",
   "descripcion": "El segundo libro continúa la historia de los personajes mientras enfrentan desafíos y peligros en la Tierra Media. La trama se divide en múltiples hilos, que incluyen la persecución de Frodo y Sam, la batalla de Helm's Deep y las aventuras de Aragorn, Legolas y Gimli.",
   "numero_pag": 352,
@@ -231,7 +269,9 @@
     "$oid": "652e8d1adf56dd906795a6a1"
   },
   "nombre": "The Return of the King",
-  "autor": "J. R. R. Tolkien",
+  "id_autor": {
+    "$oid": "652e96eadf56dd906795a6b9"
+  },
   "editorial": "George Allen & Unwin",
   "descripcion": "En este tercer libro, se resuelven las tramas y se lleva a cabo la batalla final contra Sauron. La historia culmina con la coronación de Aragorn como rey de Gondor y la despedida de los personajes mientras regresan a sus vidas normales.",
   "numero_pag": 416,
