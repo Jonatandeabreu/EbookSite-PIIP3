@@ -1,9 +1,9 @@
 const express = require('express');
 
-const {getTodos, getByuser, agregar} = require('../controllers/reviewsFake')
+const {getTodos, getByuser, agregar} = require('../controllers/reviews')
 const { validaterev,validaterevbyuser } = require('../middleware/validar_entrada');
 const {validarJWT} = require('../middleware/validar-rol')
-const {validateCali} = require('../middleware/validar_id')
+const {validateCali} = require('../middleware/validar_cali')
 const router = express.Router();
 
 router.get('/', getTodos);

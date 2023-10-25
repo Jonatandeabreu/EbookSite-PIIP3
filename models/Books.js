@@ -3,7 +3,6 @@ const { stringify } = require('nodemon/lib/utils');
 const { Schema } = mongoose;
 
 const bookSchema = new Schema({
-  _id: mongoose.Types.ObjectId,
   nombre: String, // String is shorthand for {type: String}
   id_autor: mongoose.Types.ObjectId,
   editorial: String,

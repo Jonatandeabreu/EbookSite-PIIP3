@@ -1,7 +1,6 @@
 const express = require('express');
 
-const {getTodos, getByID, agregar, editar, borrar,getByIDBook} = require('../controllers/librosFake')
-const { validateId } = require('../middleware/validar_id');
+const {getTodos, agregar, editar, borrar,getByIDBook} = require('../controllers/libros')
 const {validarJWT,esAdmin} = require('../middleware/validar-rol')
 const { validateaddbook } = require('../middleware/validar_entrada');
 

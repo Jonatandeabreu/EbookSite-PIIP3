@@ -1,22 +1,22 @@
-const userfake = require('../data/user');
+const userfake = require('../models/Users');
 const jwt = require('jsonwebtoken')
 
 //login
 const login = async (req, res) => {
     const { nombre, pass } = req.body;
     const token = await generarJWT(nombre)
-    const uservalido = userfake.usuarios.find(u => u.nombre === nombre && u.pass === pass);
-    if (uservalido) {
-        res.json({
-            msg: 'inicio exitoso',
+
+   await userfake.find({ nombre: nombre, pass: pass }).then((ok) => {
+        if (ok.length > 0) {
+          res.json({
+            msg:'inicio exitoso',
             nombre,
             token
-        })
-    } else {
-        res.json({
-            msg: 'error'
-        })
-    }
+          })
+        } else {
+          res.json({msg:'error'})
+        }
+      });
 }
 
 //generar token 
