@@ -1,5 +1,6 @@
 //const librosFake = require('../data/libros');
 const libros = require('../models/Books');
+
 //obtener todos
 const getTodos = async (req, res) => {
     const librosdevueltos = await libros.find().exec();
@@ -36,7 +37,7 @@ const agregar = async (req, res) => {
                 data
             });
         } else {
-            console.log("no se guardo")
+            res.status(404).json({ mensaje: 'Error en el guardado, intente nuevamente' });
         }
     });
 }
@@ -73,11 +74,11 @@ const borrar = async (req, res) => {
     let { id } = req.params;
     await libros.findByIdAndDelete({ _id: id }).then(ok => {
         if (ok) {
-            res.json({
+            res.status(201).json({
                 msg: 'se borro el libro',
             });
         } else {
-            res.json("Error en el borrado")
+            res.status(500).json("Error en el borrado")
         }
     });
 

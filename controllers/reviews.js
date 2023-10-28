@@ -12,25 +12,29 @@ const getByuser = async (req, res) => {
     
     const reviewEncontrado = await reviews.find({usuario:nombre}).exec();
    
-    if (reviewEncontrado) {
+    if (reviewEncontrado.length > 0) {
         res.json(reviewEncontrado);
     } else {
         res.status(404).json({
             nombre,
-            encontrado: false
+            encontrado: false,
+            msg: "No se encontro comentario"
         })
     }
 }
 
 //Agregar comentario
 const agregar = async (req, res) => {
-    const { nombre_libro, texto_reseña, Calificación, Fecha_de_Publicación, usuario } = req.body;
-
+    const { nombre_libro, texto_reseña, Calificación, usuario } = req.body;
+    //obtener fecha
+    const fechaActual = new Date();
+    const formato = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }; 
+    const fechaFinal = fechaActual.toLocaleDateString('es-AR',formato)
     const data = new reviews({
         nombre_libro: nombre_libro,
         texto_reseña: texto_reseña,
         Calificación: Calificación,
-        Fecha_de_Publicación: Fecha_de_Publicación,
+        Fecha_de_Publicación: fechaFinal,
         usuario: usuario
     })
     await data.save().then((ok) => {

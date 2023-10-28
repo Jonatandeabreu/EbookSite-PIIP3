@@ -14,7 +14,7 @@ const login = async (req, res) => {
             token
           })
         } else {
-          res.json({msg:'error'})
+          res.json({msg:'Error, verifique los datos ingresados'})
         }
       });
 }
