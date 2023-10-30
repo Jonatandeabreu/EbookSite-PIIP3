@@ -12,7 +12,7 @@ const getTodos = async (req, res) => {
 const getByIDBook = async (req, res) => {
     let { id } = req.params;
     console.log(id);
-    const libroEncontrado = await libros.findById({_id:id}).exec();
+    const libroEncontrado = await libros.findById({ _id: id }).exec();
 
     res.json(libroEncontrado);
 };

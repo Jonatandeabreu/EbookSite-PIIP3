@@ -1,5 +1,5 @@
 const users = require("../models/Users");
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 
 //valida token
 const validarJWT = async (req, res, next) => {

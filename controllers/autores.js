@@ -11,16 +11,15 @@ const getTodos = async (req, res) => {
 //obtener por nombre de autor (mayusucla y minusculas)
 const getByname = async (req, res) => {
     let { nombre } = req.body;
-    
-    const autor = await autores.find({nombre:nombre}).exec();
-   
+    const autor = await autores.find({ nombre: nombre }).exec();
+
     if (autor.length > 0) {
         res.json(autor);
     } else {
         res.status(404).json({
             nombre,
             encontrado: false,
-            msg:"No se encontro un autor con ese nombre"
+            msg: "No se encontro un autor con ese nombre"
         })
     }
 }
@@ -29,7 +28,7 @@ const getByname = async (req, res) => {
 const getByID = async (req, res) => {
     let { id } = req.params;
     console.log(id);
-    const libroEncontrado = await libros.find({id_autor:id}).exec();
+    const libroEncontrado = await libros.find({ id_autor: id }).exec();
     if (libroEncontrado.length > 0) {
         res.status(201).json(libroEncontrado);
     } else {
@@ -37,7 +36,7 @@ const getByID = async (req, res) => {
             msg: "No se encontro libro con ese ID de autor"
         })
     }
-  };
+};
 
 module.exports = {
     getTodos,

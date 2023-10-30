@@ -8,8 +8,8 @@ const bookSchema = new Schema({
   editorial: String,
   descripcion: String,
   numero_pag: Number,
-  img:String,
-  link_descarga:String
+  img: String,
+  link_descarga: String
 });
 
 const Book = mongoose.model('Book', bookSchema);

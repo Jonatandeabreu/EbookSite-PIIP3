@@ -20,8 +20,7 @@ const validaterev = [
   body('nombre_libro').notEmpty().withMessage('El campo de nombre_libro no puede estar vacío'),
   body('texto_reseña').notEmpty().withMessage('El campo de texto_reseña no puede estar vacío'),
   body('Calificación').notEmpty().withMessage('El campo de Calificación no puede estar vacío'),
-  body('usuario').notEmpty().withMessage('El campo de usuario no puede estar vacío'),
-  
+
   (req, res, next) => {
     const errors = validationResult(req);
 
@@ -36,7 +35,7 @@ const validaterev = [
 // Middleware de validación para el formulario de autores
 const validateauth = [
   body('nombre').notEmpty().withMessage('El campo de nombre no puede estar vacío'),
-  
+
   (req, res, next) => {
     const errors = validationResult(req);
 
@@ -51,7 +50,7 @@ const validateauth = [
 // Middleware de validación para el formulario de reviews por usuarios
 const validaterevbyuser = [
   body('nombre').notEmpty().withMessage('El campo de nombre no puede estar vacío'),
-  
+
   (req, res, next) => {
     const errors = validationResult(req);
 
@@ -72,7 +71,7 @@ const validateaddbook = [
   body('numero_pag').notEmpty().withMessage('El campo de numero_pag no puede estar vacío'),
   body('img').notEmpty().withMessage('El campo de img no puede estar vacío'),
   body('link_descarga').notEmpty().withMessage('El campo de link_descarga no puede estar vacío'),
-  
+
   (req, res, next) => {
     const errors = validationResult(req);
 
