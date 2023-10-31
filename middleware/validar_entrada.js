@@ -1,4 +1,4 @@
-const { body, validationResult } = require('express-validator');
+const { body, validationResult,param } = require('express-validator');
 
 // Middleware de validación para el formulario de inicio de sesión
 const validateLogin = [
@@ -11,6 +11,18 @@ const validateLogin = [
       return res.status(400).json({ errors: errors.array() });
     }
 
+    next();
+  },
+];
+
+// Middleware de validación para el id por PARAM
+const validateID = [
+  param('id').isLength({min:24,max:24}).withMessage('el ID debe tener 24 caracteres'),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
     next();
   },
 ];
@@ -88,5 +100,6 @@ module.exports = {
   validaterev,
   validateauth,
   validaterevbyuser,
-  validateaddbook
+  validateaddbook,
+  validateID
 };
