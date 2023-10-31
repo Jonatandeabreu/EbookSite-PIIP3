@@ -47,7 +47,9 @@ const agregar = async (req, res) => {
                 data
             });
         } else {
-            console.log("no se guardo")
+            res.json({
+                msg:'No se guardo'
+            })
         }
     });
 }

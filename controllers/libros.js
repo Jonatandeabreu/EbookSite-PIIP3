@@ -11,10 +11,17 @@ const getTodos = async (req, res) => {
 //obtener por ID de libro
 const getByIDBook = async (req, res) => {
     let { id } = req.params;
-    console.log(id);
+    //console.log(id);
     const libroEncontrado = await libros.findById({ _id: id }).exec();
-
-    res.json(libroEncontrado);
+    if(libroEncontrado){
+        res.json(libroEncontrado);
+    }else{
+        res.status(404).json({
+            id,
+            encontrado: false,
+            msg: "No se encontro libro con ese id"
+        })
+    }
 };
 
 //Agregar

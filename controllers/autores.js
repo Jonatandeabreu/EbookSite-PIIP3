@@ -28,12 +28,11 @@ const getByname = async (req, res) => {
 //obtener libros por ID de autor
 const getByID = async (req, res) => {
     let { id } = req.params;
-    console.log(id);
     const libroEncontrado = await libros.find({ id_autor: id }).exec();
     if (libroEncontrado.length > 0) {
-        res.status(201).json(libroEncontrado);
+        res.json(libroEncontrado);
     } else {
-        res.status(404).json({
+        res.json({
             msg: "No se encontro libro con ese ID de autor"
         })
     }
