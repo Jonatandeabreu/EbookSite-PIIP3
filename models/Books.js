@@ -12,7 +12,7 @@ const bookSchema = new Schema({
   link_descarga: String
 });
 
-const Book = mongoose.model('Book', bookSchema);
+const Book = mongoose.model('Books', bookSchema);
 
 module.exports = Book;
 
