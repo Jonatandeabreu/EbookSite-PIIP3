@@ -11,7 +11,8 @@ const getTodos = async (req, res) => {
 //obtener por nombre de autor (mayusucla y minusculas)
 const getByname = async (req, res) => {
     let { nombre } = req.body;
-    const autor = await autores.find({ nombre: nombre }).exec();
+    const regex = new RegExp(nombre,'i')
+    const autor = await autores.find({ nombre:{$regex:regex}}).exec();
 
     if (autor.length > 0) {
         res.json(autor);
