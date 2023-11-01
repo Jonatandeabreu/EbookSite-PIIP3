@@ -3,50 +3,67 @@ const libros = require('../models/Books');
 
 //obtener todos
 const getTodos = async (req, res) => {
-    const librosdevueltos = await libros.find().exec();
-    res.json(librosdevueltos);
+    try {
+        const librosdevueltos = await libros.find().exec();
+        res.json(librosdevueltos);
+
+    } catch (e) {
+        res.json(e)
+    }
 }
 
 
 //obtener por ID de libro
 const getByIDBook = async (req, res) => {
-    let { id } = req.params;
-    //console.log(id);
-    const libroEncontrado = await libros.findById({ _id: id }).exec();
-    if(libroEncontrado){
-        res.json(libroEncontrado);
-    }else{
-        res.status(404).json({
-            id,
-            encontrado: false,
-            msg: "No se encontro libro con ese id"
-        })
+    try {
+        let { id } = req.params;
+        //console.log(id);
+        const libroEncontrado = await libros.findById({ _id: id }).exec();
+        if (libroEncontrado) {
+            res.json(libroEncontrado);
+        } else {
+            res.status(404).json({
+                id,
+                encontrado: false,
+                msg: "No se encontro libro con ese id"
+            })
+        }
+
+    } catch (e) {
+        res.json(e);
     }
+
 };
 
 //Agregar
 const agregar = async (req, res) => {
-    const { nombre, id_autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body;
+    try {
+        const { nombre, id_autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body;
 
-    const data = new libros({
-        nombre: nombre,
-        id_autor: id_autor,
-        editorial: editorial,
-        descripcion: descripcion,
-        numero_pag: numero_pag,
-        img: img,
-        link_descarga: link_descarga
-    })
-    await data.save().then((ok) => {
-        if (ok) {
-            res.status(201).json({
-                msg: 'se agrego el libro',
-                data
-            });
-        } else {
-            res.status(404).json({ mensaje: 'Error en el guardado, intente nuevamente' });
-        }
-    });
+        const data = new libros({
+            nombre: nombre,
+            id_autor: id_autor,
+            editorial: editorial,
+            descripcion: descripcion,
+            numero_pag: numero_pag,
+            img: img,
+            link_descarga: link_descarga
+        })
+        await data.save().then((ok) => {
+            if (ok) {
+                res.status(201).json({
+                    msg: 'se agrego el libro',
+                    data
+                });
+            } else {
+                res.status(404).json({ mensaje: 'Error en el guardado, intente nuevamente' });
+            }
+        });
+
+    } catch (e) {
+        res.json(e);
+    }
+
 }
 
 //Editar
@@ -78,16 +95,22 @@ const editar = async (req, res) => {
 
 //Borrar
 const borrar = async (req, res) => {
-    let { id } = req.params;
-    await libros.findByIdAndDelete({ _id: id }).then(ok => {
-        if (ok) {
-            res.status(201).json({
-                msg: 'se borro el libro',
-            });
-        } else {
-            res.status(500).json("Error en el borrado")
-        }
-    });
+    try {
+        let { id } = req.params;
+        await libros.findByIdAndDelete({ _id: id }).then(ok => {
+            if (ok) {
+                res.status(201).json({
+                    msg: 'se borro el libro',
+                });
+            } else {
+                res.status(500).json("Error en el borrado")
+            }
+        });
+
+    } catch (e) {
+        res.json(e);
+    }
+
 
 
 }

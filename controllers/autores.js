@@ -4,25 +4,36 @@ const libros = require("../models/Books");
 
 //obtener todos
 const getTodos = async (req, res) => {
-  const autor = await autores.find().exec();
-  res.json(autor);
+  try {
+    const autor = await autores.find().exec();
+    res.json(autor);
+
+  } catch (e) {
+    res.json(e);
+  }
 };
 
 //obtener por nombre de autor (mayusucla y minusculas)
 const getByname = async (req, res) => {
-  let { nombre } = req.body;
-  const regex = new RegExp(nombre, "i");
-  const autor = await autores.find({ nombre: { $regex: regex } }).exec();
+  try {
+    let { nombre } = req.body;
+    const regex = new RegExp(nombre, "i");
+    const autor = await autores.find({ nombre: { $regex: regex } }).exec();
 
-  if (autor.length > 0) {
-    res.json(autor);
-  } else {
-    res.status(404).json({
-      nombre,
-      encontrado: false,
-      msg: "No se encontro un autor con ese nombre",
-    });
+    if (autor.length > 0) {
+      res.json(autor);
+    } else {
+      res.status(404).json({
+        nombre,
+        encontrado: false,
+        msg: "No se encontro un autor con ese nombre",
+      });
+    }
+
+  } catch (e) {
+    res.json(e);
   }
+
 };
 
 //obtener libros por ID de autor

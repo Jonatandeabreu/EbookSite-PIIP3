@@ -7,7 +7,7 @@ const { validateaddbook,validateID } = require('../middleware/validar_entrada');
 const router = express.Router();
 
 router.get('/', getTodos);
-router.get('/test', (req, res) => res.json("Test ok"));
+//router.get('/test', (req, res) => res.json("Test ok"));
 router.get('/:id',validateID, getByIDBook);
 router.post('/', validarJWT, esAdmin, validateaddbook, agregar);
 router.put('/:id', validateID,validarJWT, esAdmin, editar);
