@@ -21,7 +21,7 @@ const getByname = async (req, res) => {
     const autor = await autores.find({ nombre: { $regex: regex } }).exec();
 
     if (autor.length > 0) {
-      res.json(autor);
+      res.status(200).json(autor);
     } else {
       res.status(404).json({
         nombre,
@@ -42,9 +42,9 @@ const getByID = async (req, res) => {
   try {
     const libroEncontrado = await libros.find({ id_autor: id }).exec();
     if (libroEncontrado.length > 0) {
-      res.json(libroEncontrado);
+      res.status(200).json(libroEncontrado);
     } else {
-      res.json({
+      res.status(404).json({
         msg: "No se encontro libro con ese ID de autor",
       });
     }

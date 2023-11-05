@@ -20,7 +20,7 @@ const getByIDBook = async (req, res) => {
         //console.log(id);
         const libroEncontrado = await libros.findById({ _id: id }).exec();
         if (libroEncontrado) {
-            res.json(libroEncontrado);
+            res.status(200).json(libroEncontrado);
         } else {
             res.status(404).json({
                 id,
@@ -99,7 +99,7 @@ const borrar = async (req, res) => {
         let { id } = req.params;
         await libros.findByIdAndDelete({ _id: id }).then(ok => {
             if (ok) {
-                res.status(201).json({
+                res.status(200).json({
                     msg: 'se borro el libro',
                 });
             } else {

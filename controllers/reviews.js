@@ -19,7 +19,7 @@ const getByuser = async (req, res) => {
         const reviewEncontrado = await reviews.find({ usuario: nombre }).exec();
 
         if (reviewEncontrado.length > 0) {
-            res.json(reviewEncontrado);
+            res.status(200).json(reviewEncontrado);
         } else {
             res.status(404).json({
                 nombre,
@@ -58,7 +58,7 @@ const agregar = async (req, res) => {
                     data
                 });
             } else {
-                res.json({
+                res.status(500).json({
                     msg: 'No se guardo'
                 })
             }
