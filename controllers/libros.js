@@ -4,7 +4,7 @@ const libros = require('../models/Books');
 //obtener todos
 const getTodos = async (req, res) => {
     try {
-        const librosdevueltos = await libros.find().exec();
+        const librosdevueltos = await libros.find();
         res.json(librosdevueltos);
 
     } catch (e) {
@@ -18,7 +18,7 @@ const getByIDBook = async (req, res) => {
     try {
         let { id } = req.params;
         //console.log(id);
-        const libroEncontrado = await libros.findById({ _id: id }).exec();
+        const libroEncontrado = await libros.findById({ _id: id });
         if (libroEncontrado) {
             res.status(200).json(libroEncontrado);
         } else {

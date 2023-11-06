@@ -5,7 +5,7 @@ const libros = require("../models/Books");
 //obtener todos
 const getTodos = async (req, res) => {
   try {
-    const autor = await autores.find().exec();
+    const autor = await autores.find();
     res.json(autor);
 
   } catch (e) {
@@ -13,12 +13,12 @@ const getTodos = async (req, res) => {
   }
 };
 
-//obtener por nombre de autor (mayusucla y minusculas)
+//obtener por nombre de autor
 const getByname = async (req, res) => {
   try {
     let { nombre } = req.body;
     const regex = new RegExp(nombre, "i");
-    const autor = await autores.find({ nombre: { $regex: regex } }).exec();
+    const autor = await autores.find({ nombre: { $regex: regex } });
 
     if (autor.length > 0) {
       res.status(200).json(autor);
@@ -40,7 +40,7 @@ const getByname = async (req, res) => {
 const getByID = async (req, res) => {
   let { id } = req.params;
   try {
-    const libroEncontrado = await libros.find({ id_autor: id }).exec();
+    const libroEncontrado = await libros.find({ id_autor: id });
     if (libroEncontrado.length > 0) {
       res.status(200).json(libroEncontrado);
     } else {

@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 //obtener todos
 const getTodos = async (req, res) => {
     try {
-        const review = await reviews.find().exec();
+        const review = await reviews.find();
         res.json(review);
     } catch (e) {
         res.json(e);
@@ -16,7 +16,7 @@ const getByuser = async (req, res) => {
     try {
         let { nombre } = req.body;
 
-        const reviewEncontrado = await reviews.find({ usuario: nombre }).exec();
+        const reviewEncontrado = await reviews.find({ usuario: nombre });
 
         if (reviewEncontrado.length > 0) {
             res.status(200).json(reviewEncontrado);
