@@ -71,9 +71,7 @@ const editar = async (req, res) => {
 
     try {
         let { id } = req.params;
-        const { nombre, id_autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body;
-
-        const libroEditado = await libros.findByIdAndUpdate(id, { nombre, id_autor, editorial, descripcion, numero_pag, img, link_descarga }, { new: true });
+        const libroEditado = await libros.findByIdAndUpdate(id, { nombre, id_autor, editorial, descripcion, numero_pag, img, link_descarga } = req.body, { new: true });
         if (!libroEditado) {
             res.status(404).json({ mensaje: 'libro no encontrado' });
         } else {

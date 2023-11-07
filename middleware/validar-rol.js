@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 
 //valida token
 const validarJWT = async (req, res, next) => {
-  const token = req.header('x-token');
+  try {
+    const token = req.header('x-token');
   //validar que exista el token
   const { nombreuser } = jwt.verify(token, process.env.clave)
 
@@ -17,6 +18,10 @@ const validarJWT = async (req, res, next) => {
       });
     }
   });
+    
+  } catch (e) {
+    res.json('Es posible que el token este expirado')
+  }
 
 };
 

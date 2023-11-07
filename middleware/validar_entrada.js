@@ -29,7 +29,7 @@ const validateID = [
 
 // Middleware de validación para el formulario de reviews
 const validaterev = [
-  body('nombre_libro').notEmpty().withMessage('El campo de nombre_libro no puede estar vacío'),
+  body('id_libro').notEmpty().withMessage('El campo de id_libro no puede estar vacío'),
   body('texto_reseña').notEmpty().withMessage('El campo de texto_reseña no puede estar vacío'),
   body('Calificación').notEmpty().withMessage('El campo de Calificación no puede estar vacío'),
 
